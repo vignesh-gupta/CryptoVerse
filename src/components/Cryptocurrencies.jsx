@@ -22,8 +22,10 @@ const Cryptocurrencies = ({ simplified }) => {
 
   if (isFetching) return <Loader />;
 
+
   return (
     <>
+    {console.log(cryptos)}
       {!simplified && (
         <div className="search-crypto">
           <Input
@@ -42,14 +44,13 @@ const Cryptocurrencies = ({ simplified }) => {
             key={currency.uuid}
           >
 
-            {/* Note: Change currency.id to currency.uuid  */}
             <Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
               <Card
                 title={`${currency.rank}. ${currency.name}`}
                 extra={<img className="crypto-image" src={currency.iconUrl} alt={currency.name} />}
                 hoverable
               >
-                <p>Price: {millify(currency.price)}</p>
+                <p>Price: {millify(currency.price,{precision:5})}</p>
                 <p>Market Cap: {millify(currency.marketCap)}</p>
                 <p>Daily Change: {currency.change}%</p>
               </Card>
