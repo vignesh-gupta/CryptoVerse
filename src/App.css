@@ -292,6 +292,7 @@ a:hover{
     width: 180px;
 }
 .news-card{
+    height: 100%;
     min-height: 300px !important;
 }
 .news-image-container{
@@ -302,7 +303,7 @@ a:hover{
 width: 70%;
 }
 
-.news-image-container .img{
+.news-image-container > img{
     width:100px;
     height:100px;
 }
