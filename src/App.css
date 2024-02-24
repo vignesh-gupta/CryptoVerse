@@ -38,8 +38,8 @@ a:hover{
 }
 .nav-container{
     position: fixed;
+    top: 0;
     left: 0;
-    margin: 10px;
     height: 100vh;
     margin: 0px;
     background-color: rgb(0, 21, 41);
