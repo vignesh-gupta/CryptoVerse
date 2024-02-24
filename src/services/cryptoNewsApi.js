@@ -2,24 +2,17 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const createRequest = (url) => ({ url });
 
-const apiKey = "d98fb8ff8f9946c7ae9042eaf89085a1"
+const apiKey = "b6c4d1f8b1fd9293efd299f22ba28373";
 
 export const cryptoNewsApi = createApi({
   reducerPath: "cryptoNewsApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://newsapi.org/v2" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://gnews.io/api/v4" }),
   endpoints: (builder) => ({
     getCryptoNews: builder.query({
-      query: ({ newsCategory }) => {
-        let date = new Date();
-
-        let from = `${date.getFullYear()}-${date.getMonth() + 1}-${
-          date.getDate() - 1
-        }`;
-
-        return createRequest(
-          `/everything?q=${newsCategory}&from=${from}&sortBy=publishedAt&apiKey=${apiKey}`
-        );
-      },
+      query: ({ newsCategory }) =>
+        createRequest(
+          `/search?q=${newsCategory}&lang=en&country=in&in=title,description&max=10&apikey=${apiKey}`
+        ),
     }),
   }),
 });
