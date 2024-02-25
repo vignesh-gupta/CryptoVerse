@@ -20,14 +20,11 @@ a:hover {
 .app {
   display: flex;
   overflow: hidden;
-  min-height: 100vh;
 }
 
 .navbar {
   flex: 0.2;
   background-color: rgb(0, 21, 41);
-  overflow: auto;
-  position: relative;
 }
 
 .no-news {
@@ -47,8 +44,7 @@ a:hover {
   flex-grow: 1;
 }
 .nav-container {
-  position: absolute;
-  top: 0;
+  position: fixed;
   left: 0;
   height: 100vh;
   margin: 0px;
